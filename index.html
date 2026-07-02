@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shashkov Portfolio</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h1>ША</h1>
+    <button onclick="showSection('home')">Главная</button>
+    <button onclick="showSection('courses')">Курсы</button>
+    <button onclick="showSection('projects')">Проекты</button>
+    <button onclick="showSection('practice')">Практика</button>
+    <button onclick="showSection('skills')">Навыки</button>
+    <button onclick="showSection('about')">Обо мне</button>
+    <button onclick="showSection('ai')" id="aiAssistantBtn"><i class="fas fa-brain"></i> ИИ-помощник</button>
+</div>
+
+<div class="content">
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<section id="home" class="page active">
+    <div class="hero-container">
+
+        <div class="hero-image">
+            <img src="images/photo.jpg" alt="Фото Андрея">
+        </div>
+
+        <div class="hero-info">
+            <h2>Шашков Андрей</h2>
+
+            <p class="subtitle">
+                UX/UI Designer • Python • SQL
+            </p>
+
+            <p>
+                Создаю современные интерфейсы, веб-приложения
+                и системы автоматизации.
+            </p>
+
+            <div class="hero-buttons">
+                <button onclick="showSection('projects')">
+                    Проекты
+                </button>
+
+                <button onclick="showSection('courses')">
+                    Сертификат
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="courses" class="page">
+
+    <h2>Сертификат</h2>
+
+    <div class="certificate-card">
+
+        <img 
+            src="images/certificate.png" 
+            alt="Сертификат"
+            onclick="openCertificate('images/certificate.png')"
+        >
+
+        <div class="certificate-info">
+
+            <h3>Генеративное искусство - Sber</h3>
+
+            <p>
+                Курс по Sber, генеративное искусство.
+            </p>
+
+            <button onclick="openCertificate('images/certificate.png')">
+                Открыть сертификат
+            </button>
+
+        </div>
+
+    </div>
+	    <div class="certificate-card">
+
+        <img 
+            src="images/certificate_2.png" 
+            alt="Сертификат"
+            onclick="openCertificate('images/certificate_2.png')"
+        >
+
+        <div class="certificate-info">
+
+            <h3>LLM GigsChat - Sber</h3>
+
+            <p>
+                Курс по Sber, LLM GigsChat.
+            </p>
+
+            <button onclick="openCertificate('images/certificate_2.png')">
+                Открыть сертификат
+            </button>
+
+        </div>
+
+    </div>
+	    <div class="certificate-card">
+
+        <img 
+            src="images/certificate_3.png" 
+            alt="Сертификат"
+            onclick="openCertificate('images/certificate_3.png')"
+        >
+
+        <div class="certificate-info">
+
+            <h3>SQL - Yandex</h3>
+
+            <p>
+                Курс от Yandex, SQL: шаг за шагом.
+            </p>
+
+            <button onclick="openCertificate('images/certificate_3.png')">
+                Открыть сертификат
+            </button>
+
+        </div>
+
+    </div>
+        <div class="certificate-card">
+
+        <img 
+            src="images/certificate_4.png" 
+            alt="Сертификат"
+            onclick="openCertificate('images/certificate_4.png')"
+        >
+
+        <div class="certificate-info">
+
+            <h3>Stepik</h3>
+
+            <p>
+                Курс по Stepik, "Поколение пайтон": курс для начинающих.
+            </p>
+
+            <button onclick="openCertificate('images/certificate_4.png')">
+                Открыть сертификат
+            </button>
+
+        </div>
+
+</section>
+
+<!-- МОДАЛЬНОЕ ОКНО -->
+
+<<div class="certificate-modal" id="certificateModal">
+    <span class="close-modal" onclick="closeCertificate()">×</span>
+
+    <img id="modalCertificate" src="" alt="Сертификат">
+</div>
+
+<!-- МОДАЛЬНОЕ ОКНО ГАЛЕРЕИ -->
+
+<div class="gallery-modal" id="galleryModal">
+    <span class="gallery-close" onclick="closeGallery()">×</span>
+    <span class="gallery-nav gallery-prev" onclick="galleryNav(-1)">&#10094;</span>
+    <img id="galleryImage" src="" alt="Скриншот">
+    <span class="gallery-nav gallery-next" onclick="galleryNav(1)">&#10095;</span>
+</div>
+
+<section id="projects" class="page">
+    <h2>Проекты</h2>
+
+    <div class="cards">
+        <div class="project project-featured">
+            <span>01</span>
+            <h3>ИИ по распознованию</h3>
+            <p>Разработка ИИ для распознования предметов.</p>
+            <div class="project-video">
+                <video controls preload="metadata">
+                    <source src="video/conveyor_video.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <div class="project project-featured">
+            <span>02</span>
+            <h3>Распознование лиц</h3>
+            <p>ИИ по распознованию лиц.</p>
+            <div class="project-gallery">
+                <img src="images/Снимок экрана 2026-07-02 140242.png" alt="Распознование лиц 1" onclick="openGallery(this)">
+                <img src="images/Снимок экрана 2026-07-02 140306.png" alt="Распознование лиц 2" onclick="openGallery(this)">
+                <img src="images/Снимок экрана 2026-07-02 140408.png" alt="Распознование лиц 3" onclick="openGallery(this)">
+            </div>
+        </div>
+
+        <div class="project project-featured">
+            <span>03</span>
+            <h3>Разработка приложений</h3>
+            <p>Помощь в написании 3 приложений.</p>
+            <div class="project-gallery">
+                <figure class="gallery-item">
+                    <img src="images/prilozhyha1.png" alt="Приложение 1" onclick="openGallery(this)">
+                    <figcaption>Интернет магазин</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="images/prilozhyha2.jpg" alt="Приложение 2" onclick="openGallery(this)">
+                    <figcaption>СИС приложения по производству</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="images/prilozhyha3.jpg" alt="Приложение 3" onclick="openGallery(this)">
+                    <figcaption>Приложения для документов</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="practice" class="page">
+    <h2>Практика</h2>
+
+    <div class="practice-item">
+        <div class="practice-header" onclick="togglePractice(this)">
+            <h3>МУ МВД России "Люберецкое"</h3>
+            <span>+</span>
+        </div>
+
+        <div class="practice-content">
+            <p>
+                Работа с SQL, документацией и обработкой данных.
+            </p>
+
+            <ul>
+                <li>SQL-запросы</li>
+                <li>DBeaver</li>
+                <li>Работа с документацией</li>
+            </ul>
+        </div>
+    </div>
+	<div class="practice-item">
+        <div class="practice-header" onclick="togglePractice(this)">
+            <h3>МОУ Гимназия №5"Интеллект"</h3>
+            <span>+</span>
+        </div>
+
+        <div class="practice-content">
+            <p>
+                Работа разноробочим, документацией и обработкой данных.
+            </p>
+
+            <ul>
+                <li>Физическая сила</li>
+                <li>Excel</li>
+                <li>Работа с документацией</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="page">
+    <h2>Навыки</h2>
+
+    <div class="skills-grid">
+        <div class="skill-item" data-rating="4">
+            <span class="skill-name">Python</span>
+            <div class="skill-rating">
+                <span class="rating-label">Уровень</span>
+                <div class="rating-dots" data-rating="4"></div>
+            </div>
+        </div>
+        <div class="skill-item" data-rating="4">
+            <span class="skill-name">HTML/CSS</span>
+            <div class="skill-rating">
+                <span class="rating-label">Уровень</span>
+                <div class="rating-dots" data-rating="4"></div>
+            </div>
+        </div>
+        <div class="skill-item" data-rating="3">
+            <span class="skill-name">JavaScript</span>
+            <div class="skill-rating">
+                <span class="rating-label">Уровень</span>
+                <div class="rating-dots" data-rating="3"></div>
+            </div>
+        </div>
+        <div class="skill-item" data-rating="4">
+            <span class="skill-name">SQL</span>
+            <div class="skill-rating">
+                <span class="rating-label">Уровень</span>
+                <div class="rating-dots" data-rating="4"></div>
+            </div>
+        </div>
+        <div class="skill-item" data-rating="3">
+            <span class="skill-name">Git</span>
+            <div class="skill-rating">
+                <span class="rating-label">Уровень</span>
+                <div class="rating-dots" data-rating="3"></div>
+            </div>
+        </div>
+        <div class="skill-item" data-rating="3">
+            <span class="skill-name">Linux</span>
+            <div class="skill-rating">
+                <span class="rating-label">Уровень</span>
+                <div class="rating-dots" data-rating="3"></div>
+            </div>
+        </div>
+        <div class="skill-item" data-rating="4">
+            <span class="skill-name">Figma</span>
+            <div class="skill-rating">
+                <span class="rating-label">Уровень</span>
+                <div class="rating-dots" data-rating="4"></div>
+            </div>
+        </div>
+        <div class="skill-item" data-rating="5">
+            <span class="skill-name">VS Code</span>
+            <div class="skill-rating">
+                <span class="rating-label">Уровень</span>
+                <div class="rating-dots" data-rating="5"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="page">
+    <h2>Обо мне</h2>
+
+    <div class="glass">
+        <p>
+            Студент Люберецкого техникума имени Ю.А. Гагарина.
+            Интересуюсь UX/UI, frontend и автоматизацией.
+        </p>
+
+        <div class="links">
+            <a href="https://github.com/DDarta13934">GitHub</a>
+            <a href="mailto:saskov139@gmail.com">Email</a>
+            <a href="https://t.me/vobla10">Telegram</a>
+        </div>
+
+    </div>
+    <a href="https://steamcommunity.com/profiles/76561199193615633/" class="steam-secret" target="_blank">Мой стим тссс</a>
+</section>
+
+<!-- ===== ИИ-ПОМОЩНИК ===== -->
+
+<section id="ai" class="page">
+    <h2>ИИ-помощник</h2>
+
+    <div class="ai-container">
+        <p class="ai-desc">
+            <i class="fas fa-info-circle"></i>
+            Вставьте текст урока — нейросеть GigaChat сгенерирует вопросы для класса
+        </p>
+
+        <div class="ai-range-container">
+            <label><i class="fas fa-list-ol"></i> Количество вопросов:</label>
+            <input type="range" id="questionCount" min="3" max="10" value="3" step="1">
+            <span class="ai-range-value" id="questionCountLabel">3</span>
+        </div>
+
+        <textarea id="aiTextInput" class="ai-textarea" placeholder="Вставьте сюда текст параграфа, конспект лекции или любой учебный материал..."></textarea>
+
+        <div class="ai-buttons">
+            <button id="aiGenerateBtn" class="ai-btn-primary"><i class="fas fa-magic"></i> Сгенерировать</button>
+            <button id="aiDemoBtn" class="ai-btn-secondary"><i class="fas fa-file-import"></i> Загрузить пример</button>
+            <label class="ai-btn-secondary ai-upload-label"><i class="fas fa-upload"></i> Загрузить .txt
+                <input type="file" id="fileInput" accept=".txt">
+            </label>
+        </div>
+
+        <div id="aiLoading" class="ai-loading"><i class="fas fa-spinner"></i> Нейросеть думает...</div>
+        <div id="aiQuestionsContainer"></div>
+
+        <div class="ai-footer">
+            <i class="fas fa-info-circle"></i> Количество вопросов: от 3 до 10. Нажмите на ответ, чтобы показать шпаргалку для учителя.
+        </div>
+    </div>
+</section>
+
+<!-- TOAST -->
+
+<div id="toastMessage" class="toast">Готово!</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

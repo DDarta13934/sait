@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Python",
+    "description": "Основы Python и автоматизация задач.",
+    "link": "https://stepik.org/"
+  },
+  {
+    "title": "Всё о компьютерных сетях",
+    "description": "Работа с сетями и базовые сетевые технологии.",
+    "link": "https://stepik.org/"
+  },
+  {
+    "title": "Погружение в SQL",
+    "description": "Основы SQL и работа с базами данных.",
+    "link": "https://stepik.org/"
+  }
+]

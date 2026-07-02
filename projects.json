@@ -1,0 +1,20 @@
+[
+  {
+    "title": "UX/UI Telegram Bot",
+    "description": "Дизайн интерфейса Telegram-бота.",
+    "tech": "Figma, HTML, CSS",
+    "link": "https://github.com/Chewbacca100"
+  },
+  {
+    "title": "SQL Database Project",
+    "description": "Работа с базами данных и CRUD-операциями.",
+    "tech": "SQL, SQLite",
+    "link": "https://github.com/Chewbacca100"
+  },
+  {
+    "title": "Mobile App Concept",
+    "description": "Концепт мобильного приложения.",
+    "tech": "Figma, JS",
+    "link": "https://github.com/Chewbacca100"
+  }
+]
